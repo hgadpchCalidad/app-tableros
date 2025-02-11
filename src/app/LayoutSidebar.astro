@@ -1,0 +1,28 @@
+---
+import FooterSidebar from './FooterSidebar.astro';
+import LayoutCommon from './LayoutCommon.astro';
+import NavBarSidebar from './NavBarSidebar.astro';
+import NavBarStacked from './NavBarStacked.astro';
+import SideBar from './SideBar.astro';
+---
+
+<LayoutCommon>
+	<div class="flex h-screen">
+        <!-- Sidebar -->
+		<SideBar/>
+
+        <!-- Main content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Navbar -->
+
+
+			<NavBarSidebar/>
+
+            <!-- Dashboard content -->
+            <div class="max-w-8xl mx-auto  py-6 sm:px-6 lg:px-8">
+                <!-- Add your dashboard cards and charts here -->
+				 <slot/>
+            </div>
+        </main>
+    </div>
+</LayoutCommon>

@@ -1,0 +1,26 @@
+---
+import type { loadApp } from "astro/app/node";
+//import LayoutSidebar from "../app/LayoutSidebar.astro";
+import IframeLooker from '../components/IframeLooker.jsx';
+import LayoutSidebar from "../app/LayoutSidebar.astro";
+import ErrorMaintenance from "../modules/ErrorMaintenance.astro";
+const renderizar = Astro.url.searchParams.get("renderizar");
+
+
+//const renderizar = params.renderizar;
+
+---
+
+<LayoutSidebar>
+  <!-- {user.rol === "prefecto"?  :<iframe width="100%" height="800px" src="https://lookerstudio.google.com/embed/reporting/f11660cd-aaa7-473a-a2ff-63ac0e3b57fb/page/i56qD"
+  frameborder="0"  allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+  class="flex"
+  /> } -->
+  <!-- <iframe width="100%" height="800px" src={user.rol === "prefecto"?urlPrefecto:"https://lookerstudio.google.com/embed/reporting/f11660cd-aaa7-473a-a2ff-63ac0e3b57fb/page/i56qD"}
+  frameborder="0"  allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+  class="flex"
+  /> -->
+  
+    <IframeLooker client:load renderizar={renderizar} >
+  
+</LayoutSidebar>
